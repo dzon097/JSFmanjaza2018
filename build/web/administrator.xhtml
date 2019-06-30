@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <div style="text-align: center">
+        <h1>Admin</h1>
+        <h:form>
+            <h:dataTable value="#{AdminControler.duplikati}" var="duplikat"  style="display: inline">
+                <h:column>
+                    <f:facet name="header">Br Slicice</f:facet>
+                    #{duplikat.idSlicice}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Ime Vlasnika</f:facet>
+                    #{duplikat.ime}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Prezime</f:facet>
+                    #{duplikat.prezime}
+                </h:column>
+                <h:column>
+                    <h:commandButton value="Otkupi" action="#{AdminControler.otkupi(duplikat)}"/>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+        
+        
+        <h:form>
+            <h:commandLink action="#{loginController.logout()}" value="Logout()"/>
+        </h:form>
+    </h:body>
+    </div>
+</html>
+

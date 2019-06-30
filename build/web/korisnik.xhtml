@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <div style="text-align: center">
+        <h1>Klijent</h1>
+        <h:dataTable value="#{KorisnikControler.slicice}" var="slicica"  style="display: inline">
+            <h:column>
+                <f:facet name="header">Br Slicice</f:facet>
+                #{slicica.broj}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Naziv</f:facet>
+                #{slicica.naziv}
+            </h:column>
+             <h:column>
+                <f:facet name="header">Tip</f:facet>
+                #{slicica.tip}
+            </h:column>
+        </h:dataTable>
+        
+        <h:form>
+            <h:commandButton value="Otvori Kesicu" action="#{KorisnikControler.otvoriKesicu()}"/>
+            
+        </h:form>
+        <div>
+                #{KorisnikControler.poruka}
+        </div>
+        
+        
+        <h:form>
+            <h:commandLink action="#{loginController.logout()}" value="Logout()"/>
+        </h:form>
+        </div>
+    </h:body>
+    
+</html>
+
